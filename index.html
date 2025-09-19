@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yash | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Lighter background */
+        }
+        .scroll-smooth-container {
+            scroll-behavior: smooth;
+        }
+        .section {
+            padding: 5rem 0; /* Increased padding */
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background-image: linear-gradient(to right, #6366f1, #8b5cf6);
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.5);
+        }
+        .btn-secondary {
+            background-color: white;
+            border: 2px solid #6366f1;
+            color: #6366f1;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            background-color: #6366f1;
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.3);
+        }
+
+        /* --- Animation Styles --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="scroll-smooth-container">
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-2xl">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="text-3xl font-extrabold text-gray-800 rounded-lg p-2 hover:bg-gray-100 transition-colors">yash</a>
+            <div class="space-x-6 hidden md:flex">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors rounded-lg p-2 hover:bg-gray-100">About</a>
+                <a href="#projects" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors rounded-lg p-2 hover:bg-gray-100">Projects</a>
+                <a href="#skills" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors rounded-lg p-2 hover:bg-gray-100">Skills</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors rounded-lg p-2 hover:bg-gray-100">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-white shadow-md absolute w-full z-40 hidden rounded-b-2xl">
+        <a href="#about" class="block py-3 px-6 text-gray-800 hover:bg-gray-100 transition-colors">About</a>
+        <a href="#projects" class="block py-3 px-6 text-gray-800 hover:bg-gray-100 transition-colors">Projects</a>
+        <a href="#skills" class="block py-3 px-6 text-gray-800 hover:bg-gray-100 transition-colors">Skills</a>
+        <a href="#contact" class="block py-3 px-6 text-gray-800 hover:bg-gray-100 transition-colors">Contact</a>
+    </div>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center section">
+            <div class="max-w-4xl mx-auto p-12 card text-center">
+                <div class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden mb-8 border-4 border-indigo-500 shadow-md">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHHCQGndges3Q/profile-displayphoto-shrink_200_200/B4DZkJVF4xG8AY-/0/1756798149723?e=1761177600&v=beta&t=FuZRTOw2htX-iBnD3tqHpBMz788CFpDe7R6zR8y_7Vo" alt="yash" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">yash</span>.</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-10">A <span class="font-bold text-gray-800">passionate developer</span> building modern and responsive web applications.</p>
+                <div class="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-6 justify-center">
+                    <a href="#projects" class="inline-block btn-primary text-white font-semibold py-4 px-10 rounded-full shadow-lg transform">View My Work</a>
+                    <a href="#contact" class="inline-block btn-secondary font-semibold py-4 px-10 rounded-full shadow-lg transform">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section animate-on-scroll">
+            <div class="max-w-4xl mx-auto p-12 card">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">About Me</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    My name is Yash Wanjari, and I'm a passionate software engineering student at Mumbai University. I'm driven by a curiosity for how things work and a desire to build solutions that are not only functional but also intuitive and visually appealing. This portfolio is a direct reflection of my journey, showcasing my hands-on experience and my commitment to mastering the art of software development.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    Outside of my studies, I enjoy tackling personal projects to learn new technologies and sharpen my skills. I believe that a healthy balance between theoretical knowledge and practical application is key to becoming a well-rounded developer.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="max-w-5xl mx-auto p-12 card">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-10 text-center">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                    <!-- Project 1 -->
+                    <div class="card p-8 bg-gray-50 animate-on-scroll">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Building My First Website</h3>
+                        <p class="text-gray-600 mb-5">This project is a personal portfolio website created from scratch to showcase my skills in web development. I focused on building a clean, modern, and responsive user interface using HTML, CSS, and JavaScript, demonstrating my ability to build professional, well-structured web applications from the ground up.</p>
+                        <a href="#" class="inline-block text-indigo-600 font-medium hover:underline transition-colors transform hover:translate-x-1">View Project &rarr;</a>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="card p-8 bg-gray-50 animate-on-scroll">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Project Title Two</h3>
+                        <p class="text-gray-600 mb-5">A brief description of your project. Talk about the problem it solves, the technologies you used, and the skills you demonstrated.</p>
+                        <a href="#" class="inline-block text-indigo-600 font-medium hover:underline transition-colors transform hover:translate-x-1">View Project &rarr;</a>
+                    </div>
+                    <!-- Add more projects here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section animate-on-scroll">
+            <div class="max-w-4xl mx-auto p-12 card">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">Skills</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">Python</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">HTML</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">Java</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">C++</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">Data Structures</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">React</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">Tailwind CSS</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">SQL</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">Problem-Solving</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">Teamwork</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-5 py-3 rounded-full shadow-md">Communication</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section animate-on-scroll">
+            <div class="max-w-4xl mx-auto p-12 card">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">Get In Touch</h2>
+                <p class="text-gray-700 text-center mb-8 text-lg">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <a href="mailto:yashu1jari@gmail.com" class="btn-primary inline-block text-white font-semibold py-4 px-10 rounded-full shadow-lg transform">Email Me</a>
+                    <a href="https://www.linkedin.com/in/yash-wanjari-ba8b97224/" target="_blank" class="btn-secondary inline-block font-semibold py-4 px-10 rounded-full shadow-lg transform">LinkedIn</a>
+                    <a href="https://github.com/Yashwanjarigithub" target="_blank" class="inline-block bg-white text-gray-800 font-semibold py-4 px-10 rounded-full border-2 border-gray-400 shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-8 rounded-t-2xl">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 yash. All rights reserved. <span class="ml-4">Licensed under the <a href="LICENSE.md" target="_blank" class="text-indigo-400 hover:underline">MIT License</a></span></p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // IntersectionObserver for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, {
+            threshold: 0.1 // Triggers when 10% of the element is visible
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
